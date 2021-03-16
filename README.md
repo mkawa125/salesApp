@@ -1,6 +1,6 @@
 # sales App
 
-An application for customer management for in a business.
+An application for customer management in a business.
 
 ## Getting Started
 
