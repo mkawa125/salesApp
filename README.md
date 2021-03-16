@@ -1,4 +1,4 @@
-# simusolarApp
+# salesApp
 
 A new Flutter project.
 
