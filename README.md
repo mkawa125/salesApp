@@ -1,6 +1,6 @@
-# simusolarApp
+# sales App
 
-A new Flutter project.
+An application for customer management in a business.
 
 ## Getting Started
 
