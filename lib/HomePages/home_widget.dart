@@ -1,47 +1,57 @@
 // Import material again
 import "package:flutter/material.dart";
+import "placeholder_widget.dart";
 
 class Home extends StatefulWidget{
   @override
-
   State<StatefulWidget> createState() {
       return _HomeState();
     }
   }
 
 class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    PlaceholderWidget(Colors.white),
+    PlaceholderWidget(Colors.deepOrange),
+    PlaceholderWidget(Colors.green),
+    PlaceholderWidget(Colors.red),
+    PlaceholderWidget(Colors.white60)
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Service App'),
       ),
+      body: _children[_currentIndex], // new
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
         type: BottomNavigationBarType.fixed,
+        onTap: onTabTapped, // new
+        currentIndex: _currentIndex, // new
         items: [
-          BottomNavigationBarItem(
+          new BottomNavigationBarItem(
             icon: new Icon(Icons.home),
             title: new Text('Home'),
           ),
-          BottomNavigationBarItem(
+          new BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart_outlined),
             title: new Text('Stock'),
           ),
 
 
-          BottomNavigationBarItem(
+          new BottomNavigationBarItem(
             icon: Icon(Icons.fact_check),
             title: new Text('Evaluation'),
           ),
 
-          BottomNavigationBarItem(
+          new BottomNavigationBarItem(
             icon: Icon(Icons.directions_car),
             title: new Text('Trips'),
           ),
 
 
-          BottomNavigationBarItem(
+          new BottomNavigationBarItem(
               icon: Icon(Icons.confirmation_number),
               title: Text('Tickets')
           )
@@ -49,4 +59,11 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 }
+
