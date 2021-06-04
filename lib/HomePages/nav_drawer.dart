@@ -8,13 +8,14 @@ class NavDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text('Service App', style: TextStyle(color: Colors.white, fontSize: 20)),
+            child: Text('Service App', style: TextStyle(color: Colors.white, fontSize: 18)),
             decoration: BoxDecoration(
-                color: Colors.deepPurpleAccent,
+                color: Colors.black54,
                 image: DecorationImage(image: AssetImage('assets/images/cover.jpg')),
             ),
               // margin: EdgeInsets.all(0.0),
               // padding: EdgeInsets.all(0.0),
+
 
           ),
           ListTile(
