@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'HomePages/home_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,19 +14,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
 
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.deepPurple,
 
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Scaffold(
-          appBar: AppBar(title: Text('Notes')),
-          body: BodyLayout(),
-          floatingActionButton: FloatingActionButton(
-            tooltip: 'Increment',
-            onPressed: null,
-            child: Icon(Icons.add),
-          ),
-        )
+        home: Home(),
     );
   }
 }
@@ -52,7 +45,6 @@ Widget _myListView(BuildContext context) {
   final titles = [
     'This is the list item 1', 'This is the list item 2',
     'This is the list item 3', 'This is the list item 4',
-    'This is the list item 5', 'This is the list item 6'
   ];
 
   final icons = [
