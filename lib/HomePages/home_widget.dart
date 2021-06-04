@@ -1,6 +1,7 @@
 // Import material again
 import "package:flutter/material.dart";
 import "placeholder_widget.dart";
+import 'nav_drawer.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -21,6 +22,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavDrawer(),
       appBar: AppBar(
         title: Text('Service App'),
       ),
