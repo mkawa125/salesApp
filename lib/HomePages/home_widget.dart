@@ -29,17 +29,16 @@ class _HomeState extends State<Home> {
           Icon(Icons.share_outlined),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(Icons.search),
-          ),
+            child: Icon(Icons.search)),
           Icon(Icons.more_vert),
         ],
         backgroundColor: Colors.deepPurple,
       ),
-      body: _children[_currentIndex], // new
+      body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        onTap: onTabTapped, // new
-        currentIndex: _currentIndex, // new
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
         items: [
           new BottomNavigationBarItem(
             icon: new Icon(Icons.home),
