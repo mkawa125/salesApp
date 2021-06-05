@@ -25,6 +25,15 @@ class _HomeState extends State<Home> {
       drawer: NavDrawer(),
       appBar: AppBar(
         title: Text('Service App'),
+        actions: [
+          Icon(Icons.share_outlined),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(Icons.search),
+          ),
+          Icon(Icons.more_vert),
+        ],
+        backgroundColor: Colors.deepPurple,
       ),
       body: _children[_currentIndex], // new
       bottomNavigationBar: BottomNavigationBar(

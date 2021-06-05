@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-
           primarySwatch: Colors.deepPurple,
-
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Home(),
@@ -81,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
       body: Center(
