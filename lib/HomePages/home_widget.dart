@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
     PlaceholderWidget(Colors.deepOrange),
     PlaceholderWidget(Colors.green),
     PlaceholderWidget(Colors.red),
-    PlaceholderWidget(Colors.white60)
+    PlaceholderWidget(Colors.black45)
   ];
   @override
   Widget build(BuildContext context) {
@@ -64,11 +64,12 @@ class _HomeState extends State<Home> {
           new BottomNavigationBarItem(
               icon: Icon(Icons.confirmation_number),
               title: Text('Tickets')
-          )
+          ),
         ],
       ),
     );
   }
+
 
   void onTabTapped(int index) {
     setState(() {
