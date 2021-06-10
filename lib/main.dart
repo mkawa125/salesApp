@@ -1,5 +1,12 @@
-import 'package:flutter/material.dart';
-import 'HomePages/home_widget.dart';
+import "package:flutter/material.dart";
+import 'package:simusolarApp/HomePages/trips.dart';
+import "package:simusolarApp/HomePages/placeholder_widget.dart";
+import 'package:simusolarApp/HomePages/nav_drawer.dart';
+import 'package:simusolarApp/HomePages/stock_on_hand.dart';
+import 'package:simusolarApp/HomePages/tickets.dart';
+import 'package:simusolarApp/HomePages/home.dart';
+import 'package:simusolarApp/HomePages/evaluation.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -16,91 +23,68 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Home(),
+        home: MyBottomNavigationBar(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class MyBottomNavigationBar extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
 }
 
-class BodyLayout extends StatelessWidget {
+class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    Home(),
+    StockOnHand(),
+    EvaluationPage(),
+    TripsPage(),
+    TicketsPage()
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return _myListView(context);
+    return new Scaffold(
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        items: [
+          new BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
+          ),
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_outlined),
+            title: new Text('Stock'),
+          ),
+
+
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.fact_check),
+            title: new Text('Evaluation'),
+          ),
+
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.directions_car),
+            title: new Text('Trips'),
+          ),
+
+
+          new BottomNavigationBarItem(
+              icon: Icon(Icons.confirmation_number),
+              title: Text('Tickets')
+          ),
+        ],
+      ),
+    );
   }
-}
 
-// replace this function with the code in the examples
-Widget _myListView(BuildContext context) {
-
-  final titles = [
-    'This is the list item 1', 'This is the list item 2',
-    'This is the list item 3', 'This is the list item 4',
-  ];
-
-  final icons = [
-    Icons.directions_bus, Icons.directions_car,
-    Icons.directions_railway, Icons.directions_run,
-    Icons.directions_subway, Icons.directions_transit
-  ];
-
-  return ListView.builder(
-    itemCount: titles.length,
-    itemBuilder: (context, index) {
-      return Card(
-        child: ListTile(
-          leading: Icon(icons[index]),
-          title: Text(titles[index]),
-        ),
-      );
-    },
-  );
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
+  void onTabTapped(int index) {
     setState(() {
-      _counter++;
+      _currentIndex = index;
     });
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
   }
 }

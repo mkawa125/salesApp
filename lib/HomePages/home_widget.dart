@@ -1,7 +1,10 @@
 // Import material again
 import "package:flutter/material.dart";
+import 'trips.dart';
 import "placeholder_widget.dart";
 import 'nav_drawer.dart';
+import 'stock_on_hand.dart';
+import 'tickets.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -13,15 +16,15 @@ class Home extends StatefulWidget{
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
     PlaceholderWidget(Colors.green),
-    PlaceholderWidget(Colors.red),
-    PlaceholderWidget(Colors.black45)
+    StockOnHand(),
+    PlaceholderWidget(Colors.green),
+    TripsPage(),
+    TicketsPage()
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
         title: Text('Service App'),
