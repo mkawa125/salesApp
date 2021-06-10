@@ -1,7 +1,10 @@
 // Import material again
 import "package:flutter/material.dart";
+import 'trips.dart';
 import "placeholder_widget.dart";
 import 'nav_drawer.dart';
+import 'stock_on_hand.dart';
+import 'tickets.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -13,24 +16,32 @@ class Home extends StatefulWidget{
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
     PlaceholderWidget(Colors.green),
-    PlaceholderWidget(Colors.red),
-    PlaceholderWidget(Colors.white60)
+    StockOnHand(),
+    PlaceholderWidget(Colors.green),
+    TripsPage(),
+    TicketsPage()
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
         title: Text('Service App'),
+        actions: [
+          Icon(Icons.share_outlined),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(Icons.search)),
+          Icon(Icons.more_vert),
+        ],
+        backgroundColor: Colors.deepPurple,
       ),
-      body: _children[_currentIndex], // new
+      body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        onTap: onTabTapped, // new
-        currentIndex: _currentIndex, // new
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
         items: [
           new BottomNavigationBarItem(
             icon: new Icon(Icons.home),
@@ -56,11 +67,12 @@ class _HomeState extends State<Home> {
           new BottomNavigationBarItem(
               icon: Icon(Icons.confirmation_number),
               title: Text('Tickets')
-          )
+          ),
         ],
       ),
     );
   }
+
 
   void onTabTapped(int index) {
     setState(() {
