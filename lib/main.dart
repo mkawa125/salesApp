@@ -6,7 +6,7 @@ import 'package:simusolarApp/HomePages/stock_on_hand.dart';
 import 'package:simusolarApp/HomePages/tickets.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/HomePages/evaluation.dart';
-
+import 'package:simusolarApp/HomePages/profile_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +32,6 @@ class MyBottomNavigationBar extends StatefulWidget {
   @override
   _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
 }
-
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   int _currentIndex = 0;
   final List<Widget> _children = [
