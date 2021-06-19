@@ -14,10 +14,9 @@ class _TripsPageState extends State<TripsPage> {
       appBar: AppBar(
         title: Text('Trips'),
         actions: [
-          Icon(Icons.share_outlined),
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(Icons.search)),
+          ),
           Icon(Icons.more_vert),
         ],
         backgroundColor: Colors.deepPurple,

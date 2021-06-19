@@ -14,10 +14,9 @@ class _TicketsPageState extends State<TicketsPage> {
       appBar: AppBar(
         title: Text('Tickets'),
         actions: [
-          Icon(Icons.share_outlined),
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(Icons.search)),
+          ),
           Icon(Icons.more_vert),
         ],
         backgroundColor: Colors.deepPurple,
