@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simusolarApp/Controllers/databasehelper.dart';
+import 'package:simusolarApp/AuthPages/login.dart';
 
 
 class RegisterPage extends StatefulWidget{
@@ -124,7 +125,7 @@ class RegisterPageState extends State<RegisterPage> {
                 child: new FlatButton(
                   onPressed: ()=>Navigator.of(context).push(
                       new MaterialPageRoute(
-                        builder: (BuildContext context) => new RegisterPage(),
+                        builder: (BuildContext context) => new LoginPage(),
                       )
                   )
 

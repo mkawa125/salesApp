@@ -15,9 +15,6 @@ class LoginPage extends StatefulWidget{
 }
 
 class LoginPageState extends State<LoginPage> {
-
-
-
   read() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
