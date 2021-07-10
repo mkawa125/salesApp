@@ -47,6 +47,7 @@ class RegisterPageState extends State<RegisterPage> {
 
     return MaterialApp(
       title: 'Register',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title:  Text('Register'),

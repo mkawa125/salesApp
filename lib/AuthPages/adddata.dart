@@ -30,6 +30,7 @@ class AddDataState extends State<AddData> {
 
     return MaterialApp(
       title: 'Add Product',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title:  Text('Add Product'),

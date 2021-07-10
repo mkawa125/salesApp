@@ -23,6 +23,7 @@ class ShowDataState extends State<ShowData> {
 
     return MaterialApp(
       title: 'Login',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title:  Text('Login'),

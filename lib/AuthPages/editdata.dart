@@ -33,6 +33,7 @@ class EditDataState extends State<EditData> {
 
     return MaterialApp(
       title: 'Update Product',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title:  Text('Update Product'),
