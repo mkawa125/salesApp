@@ -105,38 +105,44 @@ class RegisterPageState extends State<RegisterPage> {
                     'Register',
                     style: new TextStyle(
                         color: Colors.white,
-                        backgroundColor: Colors.blue),),
+                        backgroundColor: Colors.blue),
+                  ),
                 ),
               ),
-              new Padding(padding: new EdgeInsets.only(top: 44.0),),
 
-              Container(
-                height: 50,
-                child: new Text(
-                  '$msgStatus',
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+              // Container(
+              //   height: 50,
+              //   child: new Text(
+              //     '$msgStatus',
+              //     textAlign: TextAlign.center,
+              //     overflow: TextOverflow.ellipsis,
+              //     style: TextStyle(fontWeight: FontWeight.bold),
+              //   ),
+              // ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: 35,
+                  ),
+                  child: Container(
+                    width: 50,
+                    child: new Text(
+                      'Already Have Account? Login',
+                      style: new TextStyle(
+                          color: Colors.blue[700],
+                          fontWeight: FontWeight.w700
+                      ),
+                    ),
+                    alignment: Alignment.center,
+                  ),
                 ),
-              ),
-              new Padding(padding: new EdgeInsets.only(top: 44.0),),
-              Container(
-                height: 50,
-                child: new FlatButton(
-                  onPressed: ()=>Navigator.of(context).push(
-                      new MaterialPageRoute(
-                        builder: (BuildContext context) => new LoginPage(),
-                      )
-                  )
 
-                  ,
-                  color: Colors.blue,
-                  child: new Text(
-                    'Login',
-                    style: new TextStyle(
-                      color: Colors.white,
-                    ),),
-                ),
+                onTap: ()=>Navigator.of(context).push(
+                    new MaterialPageRoute(
+                      builder: (BuildContext context) => new LoginPage(),
+                    )
+                )
               ),
             ],
           ),
@@ -164,29 +170,10 @@ class RegisterPageState extends State<RegisterPage> {
                 onPressed: (){
                   Navigator.of(context).pop();
                 },
-
               ),
             ],
           );
         }
     );
   }
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
