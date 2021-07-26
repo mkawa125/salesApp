@@ -77,6 +77,7 @@ class DashboardState extends State<Dashboard> {
 
 }
 
+// ignore: must_be_immutable
 class ItemList extends StatelessWidget {
 
   List list;

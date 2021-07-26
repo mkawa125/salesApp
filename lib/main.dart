@@ -7,6 +7,7 @@ import 'package:simusolarApp/HomePages/tickets.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/HomePages/evaluation.dart';
 import 'package:simusolarApp/HomePages/profile_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /** import new pages */
 import 'package:simusolarApp/AuthPages/adddata.dart';
@@ -30,16 +31,53 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: LoginPage(title: 'Flutter CRUD API'),
-        routes: <String,WidgetBuilder>{
-          '/dashboard' : (BuildContext context) => new Dashboard(title:title),
-          '/adddata' : (BuildContext context) => new AddData(title:title),
-          '/register' : (BuildContext context) => new RegisterPage(title:title),
-          '/login' : (BuildContext context) => new LoginPage(title:title),
-        },
+        home: CheckAuth(),
+        // routes: <String,WidgetBuilder>{
+        //   '/dashboard' : (BuildContext context) => new Dashboard(title:title),
+        //   '/adddata' : (BuildContext context) => new AddData(title:title),
+        //   '/register' : (BuildContext context) => new RegisterPage(title:title),
+        //   '/login' : (BuildContext context) => new LoginPage(title:title),
+        // },
     );
   }
 }
+
+class CheckAuth extends StatefulWidget {
+  @override
+  _CheckAuthState createState() => _CheckAuthState();
+}
+
+class _CheckAuthState extends State<CheckAuth> {
+  bool isAuth = false;
+  @override
+  void initState() {
+    _checkIfLoggedIn();
+    super.initState();
+  }
+
+  void _checkIfLoggedIn() async{
+    SharedPreferences localStorage = await SharedPreferences.getInstance();
+    var token = localStorage.getString('token');
+    if(token != null){
+      setState(() {
+        isAuth = true;
+      });
+    }
+  }
+  @override
+  Widget build(BuildContext context) {
+    Widget child;
+    if (isAuth) {
+      child = Home();
+    } else {
+      child = LoginPage();
+    }
+    return Scaffold(
+      body: child,
+    );
+  }
+}
+
 
 // class MyBottomNavigationBar extends StatefulWidget {
 //   @override

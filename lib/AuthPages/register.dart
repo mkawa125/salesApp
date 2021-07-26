@@ -1,179 +1,261 @@
 import 'package:flutter/material.dart';
 import 'package:simusolarApp/Controllers/databasehelper.dart';
 import 'package:simusolarApp/AuthPages/login.dart';
+import 'package:simusolarApp/AuthPages/register.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simusolarApp/HomePages/home.dart';
+import 'package:simusolarApp/Controllers/api.dart';
+import 'dart:convert';
 
 
-class RegisterPage extends StatefulWidget{
-
-  RegisterPage({Key key , this.title}) : super(key : key);
-  final String title;
-
+class RegisterPage extends StatefulWidget {
   @override
-  RegisterPageState  createState() => RegisterPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class RegisterPageState extends State<RegisterPage> {
-
-  DatabaseHelper databaseHelper = new DatabaseHelper();
-  String msgStatus = '';
-
-  final TextEditingController _nameController = new TextEditingController();
-  final TextEditingController _emailController = new TextEditingController();
-  final TextEditingController _passwordController = new TextEditingController();
-
-
-  _onPressed(){
-    setState(() {
-      if(_emailController.text.trim().toLowerCase().isNotEmpty &&
-          _passwordController.text.trim().isNotEmpty ){
-        databaseHelper.registerData(_nameController.text.trim(),_emailController.text.trim().toLowerCase(),
-
-            _passwordController.text.trim()).whenComplete((){
-          if(databaseHelper.status){
-            _showDialog();
-            msgStatus = 'Check email or password';
-          }else{
-            Navigator.pushReplacementNamed(context, '/dashboard');
-
-
-          }
-        });
-      }
-    });
-  }
-
-
+class _RegisterPageState extends State<RegisterPage> {
+  bool _isLoading = false;
+  final _formKey = GlobalKey<FormState>();
+  var email;
+  var password;
+  var fname;
+  var lname;
+  var phone;
   @override
   Widget build(BuildContext context) {
+    return Material(
+      child: Container(
+        color: Colors.teal,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Card(
+                      elevation: 4.0,
+                      color: Colors.white,
+                      margin: EdgeInsets.only(left: 20, right: 20),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
 
-    return MaterialApp(
-      title: 'Register',
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title:  Text('Register'),
-        ),
-        body: Container(
-          child: ListView(
-            padding: const EdgeInsets.only(top: 62,left: 12.0,right: 12.0,bottom: 12.0),
-            children: <Widget>[
-              Container(
-                height: 50,
-                child: new TextField(
-                  controller: _nameController,
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    labelText: 'Name',
-                    hintText: 'Place your name',
-                    icon: new Icon(Icons.person),
-                  ),
-                ),
-              ),
-              Container(
-                height: 50,
-                child: new TextField(
-                  controller: _emailController,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Place your email',
-                    icon: new Icon(Icons.email),
-                  ),
-                ),
-              ),
-
-              Container(
-                height: 50,
-                child: new TextField(
-                  controller: _passwordController,
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    hintText: 'Place your password',
-                    icon: new Icon(Icons.vpn_key),
-                  ),
-                ),
-              ),
-              new Padding(padding: new EdgeInsets.only(top: 44.0),),
-
-              Container(
-                height: 50,
-                child: new RaisedButton(
-                  onPressed: _onPressed,
-                  color: Colors.blue,
-                  child: new Text(
-                    'Register',
-                    style: new TextStyle(
-                        color: Colors.white,
-                        backgroundColor: Colors.blue),
-                  ),
-                ),
-              ),
-
-              // Container(
-              //   height: 50,
-              //   child: new Text(
-              //     '$msgStatus',
-              //     textAlign: TextAlign.center,
-              //     overflow: TextOverflow.ellipsis,
-              //     style: TextStyle(fontWeight: FontWeight.bold),
-              //   ),
-              // ),
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 35,
-                  ),
-                  child: Container(
-                    width: 50,
-                    child: new Text(
-                      'Already Have Account? Login',
-                      style: new TextStyle(
-                          color: Colors.blue[700],
-                          fontWeight: FontWeight.w700
+                              TextFormField(
+                                style: TextStyle(color: Color(0xFF000000)),
+                                cursorColor: Color(0xFF9b9b9b),
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.email,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: "Email",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF9b9b9b),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                validator: (emailValue) {
+                                  if (emailValue.isEmpty) {
+                                    return 'Please enter email';
+                                  }
+                                  email = emailValue;
+                                  return null;
+                                },
+                              ),
+                              TextFormField(
+                                style: TextStyle(color: Color(0xFF000000)),
+                                cursorColor: Color(0xFF9b9b9b),
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.insert_emoticon,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: "First Name",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF9b9b9b),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                validator: (firstname) {
+                                  if (firstname.isEmpty) {
+                                    return 'Please enter your first name';
+                                  }
+                                  fname = firstname;
+                                  return null;
+                                },
+                              ),
+                              TextFormField(
+                                style: TextStyle(color: Color(0xFF000000)),
+                                cursorColor: Color(0xFF9b9b9b),
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.insert_emoticon,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: "Last Name",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF9b9b9b),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                validator: (lastname) {
+                                  if (lastname.isEmpty) {
+                                    return 'Please enter your last name';
+                                  }
+                                  lname = lastname;
+                                  return null;
+                                },
+                              ),
+                              TextFormField(
+                                style: TextStyle(color: Color(0xFF000000)),
+                                cursorColor: Color(0xFF9b9b9b),
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.phone,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: "Phone",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF9b9b9b),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                validator: (phonenumber) {
+                                  if (phonenumber.isEmpty) {
+                                    return 'Please enter phone number';
+                                  }
+                                  phone = phonenumber;
+                                  return null;
+                                },
+                              ),
+                              TextFormField(
+                                style: TextStyle(color: Color(0xFF000000)),
+                                cursorColor: Color(0xFF9b9b9b),
+                                keyboardType: TextInputType.text,
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.vpn_key,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF9b9b9b),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                validator: (passwordValue) {
+                                  if (passwordValue.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  password = passwordValue;
+                                  return null;
+                                },
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: FlatButton(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8, bottom: 8, left: 10, right: 10),
+                                    child: Text(
+                                      _isLoading? 'Proccessing...' : 'RegisterPage',
+                                      textDirection: TextDirection.ltr,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15.0,
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  ),
+                                  color: Colors.teal,
+                                  disabledColor: Colors.grey,
+                                  shape: new RoundedRectangleBorder(
+                                      borderRadius:
+                                      new BorderRadius.circular(20.0)),
+                                  onPressed: () {
+                                    if (_formKey.currentState.validate()) {
+                                      _register();
+                                    }
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                    alignment: Alignment.center,
-                  ),
-                ),
 
-                onTap: ()=>Navigator.of(context).push(
-                    new MaterialPageRoute(
-                      builder: (BuildContext context) => new LoginPage(),
-                    )
-                )
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => LoginPage()));
+                        },
+                        child: Text(
+                          'Already Have an Account',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
   }
+  void _register()async{
+    setState(() {
+      _isLoading = true;
+    });
+    var data = {
+      'email' : email,
+      'password': password,
+      'phone': phone,
+      'fname': fname,
+      'lname': lname
+    };
 
+    var res = await Network().authData(data, '/register');
+    var body = json.decode(res.body);
+    if(body['success']){
+      SharedPreferences localStorage = await SharedPreferences.getInstance();
+      localStorage.setString('token', json.encode(body['token']));
+      localStorage.setString('user', json.encode(body['user']));
+      Navigator.push(
+        context,
+        new MaterialPageRoute(
+            builder: (context) => Home()
+        ),
+      );
+    }
 
-
-  void _showDialog(){
-    showDialog(
-        context:context ,
-        builder:(BuildContext context){
-          return AlertDialog(
-            title: new Text('Failed'),
-            content:  new Text('Check your email or password'),
-            actions: <Widget>[
-              new RaisedButton(
-
-                child: new Text(
-                  'Close',
-                ),
-
-                onPressed: (){
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        }
-    );
+    setState(() {
+      _isLoading = false;
+    });
   }
 }
