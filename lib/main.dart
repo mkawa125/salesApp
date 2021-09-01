@@ -1,19 +1,12 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
-import 'package:simusolarApp/HomePages/trips.dart';
-import "package:simusolarApp/HomePages/placeholder_widget.dart";
-import 'package:simusolarApp/HomePages/nav_drawer.dart';
-import 'package:simusolarApp/HomePages/stock_on_hand.dart';
-import 'package:simusolarApp/HomePages/tickets.dart';
 import 'package:simusolarApp/HomePages/home.dart';
-import 'package:simusolarApp/HomePages/evaluation.dart';
-import 'package:simusolarApp/HomePages/profile_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:developer';
 
 /** import new pages */
-import 'package:simusolarApp/AuthPages/adddata.dart';
-import 'package:simusolarApp/AuthPages/dashboard.dart';
 import 'package:simusolarApp/AuthPages/login.dart';
-import 'package:simusolarApp/AuthPages/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,7 +51,8 @@ class _CheckAuthState extends State<CheckAuth> {
   void _checkIfLoggedIn() async{
     SharedPreferences localStorage = await SharedPreferences.getInstance();
     var token = localStorage.getString('token');
-    if(token != null){
+    debugPrint('Token: $token');
+    if(token != null && token != '0'){
       setState(() {
         isAuth = true;
       });
@@ -69,6 +63,7 @@ class _CheckAuthState extends State<CheckAuth> {
     Widget child;
     if (isAuth) {
       child = Home();
+      debugPrint('Auth State: $isAuth');
     } else {
       child = LoginPage();
     }

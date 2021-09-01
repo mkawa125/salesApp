@@ -5,9 +5,6 @@ import 'package:simusolarApp/AuthPages/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/Controllers/api.dart';
-
-
-
 import 'dart:convert';
 
 class LoginPage extends StatefulWidget {
@@ -53,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.white,
                       margin: EdgeInsets.only(left: 20, right: 20),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                          borderRadius: BorderRadius.circular(8)),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Form(

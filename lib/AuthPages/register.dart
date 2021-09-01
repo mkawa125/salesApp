@@ -39,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Colors.white,
                       margin: EdgeInsets.only(left: 20, right: 20),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                          borderRadius: BorderRadius.circular(8)),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Form(
@@ -171,7 +171,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     padding: EdgeInsets.only(
                                         top: 8, bottom: 8, left: 10, right: 10),
                                     child: Text(
-                                      _isLoading? 'Proccessing...' : 'RegisterPage',
+                                      _isLoading? 'Processing...' : 'Register',
                                       textDirection: TextDirection.ltr,
                                       style: TextStyle(
                                         color: Colors.white,
@@ -209,7 +209,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   builder: (context) => LoginPage()));
                         },
                         child: Text(
-                          'Already Have an Account',
+                          'Already Have an Account?',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
