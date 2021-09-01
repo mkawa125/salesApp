@@ -4,6 +4,7 @@ import "nav_drawer.dart";
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:simusolarApp/Controllers/api.dart';
+import 'dart:developer';
 
 
 
@@ -64,9 +65,14 @@ class _HomeState extends State<Home>{
   }
 
   void logout() async{
+    var data = {
+      'email' : "",
+      'password' : ""
+    };
     var res = await Network().getData('/logout');
     var body = json.decode(res.body);
-    if(body['success']){
+    log('data: $body');
+    if(body['status'] == 'success'){
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.remove('user');
       localStorage.remove('token');
