@@ -6,6 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/Controllers/api.dart';
 import 'dart:convert';
+import 'dart:developer';
+
 
 class LoginPage extends StatefulWidget {
   @override
@@ -181,7 +183,9 @@ class _LoginPageState extends State<LoginPage> {
 
     var res = await Network().authData(data, '/login');
     var body = json.decode(res.body);
-    if(body['success']){
+    var token = body['token'];
+    if(token != null){
+      // log('data: $token');
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.setString('token', json.encode(body['token']));
       localStorage.setString('user', json.encode(body['user']));
@@ -192,12 +196,12 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
     }else{
-      _showMsg(body['message']);
+      _isLoading = false;
+      _showMsg(body['userMessage']);
     }
 
     setState(() {
       _isLoading = false;
     });
-
   }
 }
