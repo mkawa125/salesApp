@@ -65,13 +65,9 @@ class _HomeState extends State<Home>{
   }
 
   void logout() async{
-    var data = {
-      'email' : "",
-      'password' : ""
-    };
     var res = await Network().getData('/logout');
     var body = json.decode(res.body);
-    log('data: $body');
+    // log('data: $body');
     if(body['status'] == 'success'){
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.remove('user');
