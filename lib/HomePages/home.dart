@@ -8,12 +8,12 @@ import 'dart:developer';
 
 
 
-class Home extends StatefulWidget {
+class HomeClass extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeClassState createState() => _HomeClassState();
 }
 
-class _HomeState extends State<Home>{
+class _HomeClassState extends State<HomeClass>{
   String name;
   @override
   void initState(){
@@ -33,10 +33,6 @@ class _HomeState extends State<Home>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Colors.teal,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

@@ -5,6 +5,7 @@ import "placeholder_widget.dart";
 import 'nav_drawer.dart';
 import 'stock_on_hand.dart';
 import 'tickets.dart';
+import 'package:simusolarApp/HomePages/home.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -16,7 +17,7 @@ class Home extends StatefulWidget{
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PlaceholderWidget(Colors.white),
+    HomeClass(),
     StockOnHand(),
     PlaceholderWidget(Colors.white),
     TripsPage(),
@@ -29,10 +30,9 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text('Service App'),
         actions: [
-          Icon(Icons.share_outlined),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(Icons.search)),
+          ),
           Icon(Icons.more_vert),
         ],
         backgroundColor: Colors.deepPurple,

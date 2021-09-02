@@ -4,6 +4,7 @@ import 'package:simusolarApp/AuthPages/dashboard.dart';
 import 'package:simusolarApp/AuthPages/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simusolarApp/HomePages/home.dart';
+import 'package:simusolarApp/HomePages/home_widget.dart';
 import 'package:simusolarApp/Controllers/api.dart';
 import 'dart:convert';
 import 'dart:developer';
