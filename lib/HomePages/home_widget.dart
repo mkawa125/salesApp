@@ -16,9 +16,9 @@ class Home extends StatefulWidget{
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PlaceholderWidget(Colors.green),
+    PlaceholderWidget(Colors.white),
     StockOnHand(),
-    PlaceholderWidget(Colors.green),
+    PlaceholderWidget(Colors.white),
     TripsPage(),
     TicketsPage()
   ];
@@ -39,6 +39,7 @@ class _HomeState extends State<Home> {
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
         currentIndex: _currentIndex,

@@ -26,7 +26,7 @@ class _HomeState extends State<Home>{
 
     if(user != null) {
       setState(() {
-        name = user['fname'];
+        name = user['first_name'];
       });
     }
   }

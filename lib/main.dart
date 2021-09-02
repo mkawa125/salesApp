@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import "package:flutter/material.dart";
-import 'package:simusolarApp/HomePages/home.dart';
+// import 'package:simusolarApp/HomePages/home.dart';
+import 'package:simusolarApp/HomePages/home_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
 
@@ -63,7 +64,6 @@ class _CheckAuthState extends State<CheckAuth> {
     Widget child;
     if (isAuth) {
       child = Home();
-      debugPrint('Auth State: $isAuth');
     } else {
       child = LoginPage();
     }

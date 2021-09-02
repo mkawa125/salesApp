@@ -11,16 +11,6 @@ class _TicketsPageState extends State<TicketsPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       drawer: NavDrawer(),
-      appBar: AppBar(
-        title: Text('Tickets'),
-        actions: [
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-          ),
-          Icon(Icons.more_vert),
-        ],
-        backgroundColor: Colors.deepPurple,
-      ),
       body: new Center(
         child: Text("This is the tickets page"),
       ),

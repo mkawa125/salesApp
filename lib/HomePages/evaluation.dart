@@ -11,16 +11,6 @@ class _EvaluationPageState extends State<EvaluationPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       drawer: NavDrawer(),
-      appBar: AppBar(
-        title: Text('Evaluation'),
-        actions: [
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-          ),
-          Icon(Icons.more_vert),
-        ],
-        backgroundColor: Colors.deepPurple,
-      ),
       body: new Center(
         child: Text("This is the evaluation page"),
       ),
