@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/Controllers/api.dart';
 import 'dart:convert';
+import 'dart:developer';
 
 
 class RegisterPage extends StatefulWidget {
@@ -37,11 +38,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     Card(
                       elevation: 4.0,
                       color: Colors.white,
-                      margin: EdgeInsets.only(left: 20, right: 20),
+                      margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
                       child: Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(20.0),
                         child: Form(
                           key: _formKey,
                           child: Column(
@@ -86,11 +87,11 @@ class _RegisterPageState extends State<RegisterPage> {
                                       fontSize: 15,
                                       fontWeight: FontWeight.normal),
                                 ),
-                                validator: (firstname) {
-                                  if (firstname.isEmpty) {
+                                validator: (firstName) {
+                                  if (firstName.isEmpty) {
                                     return 'Please enter your first name';
                                   }
-                                  fname = firstname;
+                                  fname = firstName;
                                   return null;
                                 },
                               ),
@@ -236,12 +237,14 @@ class _RegisterPageState extends State<RegisterPage> {
       'email' : email,
       'password': password,
       'phone': phone,
-      'fname': fname,
-      'lname': lname
+      'first_name': fname,
+      'surname': lname
     };
 
     var res = await Network().authData(data, '/register');
     var body = json.decode(res.body);
+    log('data: $body');
+
     if(body['success']){
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.setString('token', json.encode(body['token']));
