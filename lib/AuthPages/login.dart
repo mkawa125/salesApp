@@ -49,6 +49,25 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 5,
+                        bottom: 24,
+                        right: MediaQuery.of(context).size.width * .15,
+                        left: MediaQuery.of(context).size.width * .15,
+                      ),
+                      child: Center(
+                        child: Text("Login",
+                          style: GoogleFonts.sourceCodePro(
+                            fontSize: MediaQuery.of(context).size.width * .089,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white
+                          ),
+                        ),
+                      ),
+                    ),
+
                     Card(
                       elevation: 4.0,
                       color: Colors.white,
