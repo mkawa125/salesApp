@@ -7,6 +7,8 @@ import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/Controllers/api.dart';
 import 'dart:convert';
 import 'dart:developer';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
 class LoginPage extends StatefulWidget {
