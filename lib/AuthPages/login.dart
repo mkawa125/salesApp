@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 validator: (passwordValue) {
                                   if (passwordValue.isEmpty) {
-                                    return 'Please enter some text';
+                                    return 'Please enter password';
                                   }
                                   password = passwordValue;
                                   return null;
@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                                     padding: EdgeInsets.only(
                                         top: 8, bottom: 8, left: 10, right: 10),
                                     child: Text(
-                                      _isLoading? 'Proccessing...' : 'Login',
+                                      _isLoading? 'Processing...' : 'Login',
                                       textDirection: TextDirection.ltr,
                                       style: TextStyle(
                                         color: Colors.white,
