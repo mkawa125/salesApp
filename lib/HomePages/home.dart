@@ -74,18 +74,20 @@ class _HomeClassState extends State<HomeClass>{
                   child: Container(
                       height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .45,
+
                       decoration: BoxDecoration(
-                          color: Colors.green[700],
-                          borderRadius: BorderRadius.(4)
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(8)
+
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:8,),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(padding: EdgeInsets.only(bottom: 8, top: 8),
-                                child: Text("Sign Up",
+                                child: Text("Leads",
                                   style: GoogleFonts.sourceCodePro(
-                                    color: Colors.white,
+                                    color: Colors.black87,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -112,18 +114,15 @@ class _HomeClassState extends State<HomeClass>{
                       height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .45,
                       decoration: BoxDecoration(
-                          color: Colors.blue[700],
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              bottomLeft: Radius.circular(10)
-                          )
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(8)
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:8,),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(padding: EdgeInsets.only(bottom: 8, top: 8),
-                                child: Text("Sign In",
+                                child: Text("Customers",
                                   style: GoogleFonts.sourceCodePro(
                                     color: Colors.white,
                                     fontSize: 20,
