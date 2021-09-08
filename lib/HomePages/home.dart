@@ -43,22 +43,11 @@ class _HomeClassState extends State<HomeClass>{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Hi, $name',
+            Text('Welcome, $name',
               style: TextStyle(
                   fontWeight: FontWeight.bold
               ),
             ),
-            // Center(
-            //   child: RaisedButton(
-            //     elevation: 10,
-            //     onPressed: (){
-            //       logout();
-            //     },
-            //     color: Colors.teal,
-            //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-            //     child: Text('Logout'),
-            //   ),
-            // ),
 
             Row(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -136,6 +125,18 @@ class _HomeClassState extends State<HomeClass>{
                   ),
                 )
               ],
+            ),
+
+            Center(
+              child: RaisedButton(
+                elevation: 10,
+                onPressed: (){
+                  logout();
+                },
+                color: Colors.teal,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: Text('Logout'),
+              ),
             ),
           ],
         ),

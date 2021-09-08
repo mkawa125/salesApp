@@ -5,6 +5,7 @@ import "package:flutter/material.dart";
 import 'package:simusolarApp/HomePages/home_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
+import 'dart:convert';
 
 /** import new pages */
 import 'package:simusolarApp/AuthPages/login.dart';
@@ -52,7 +53,9 @@ class _CheckAuthState extends State<CheckAuth> {
   void _checkIfLoggedIn() async{
     SharedPreferences localStorage = await SharedPreferences.getInstance();
     var token = localStorage.getString('token');
+    var user = localStorage.getString('user');
     debugPrint('Token: $token');
+    debugPrint('User: $user');
     if(token != null && token != '0'){
       setState(() {
         isAuth = true;

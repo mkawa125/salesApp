@@ -207,10 +207,10 @@ class _LoginPageState extends State<LoginPage> {
     var body = json.decode(res.body);
     var token = body['token'];
     if(token != null){
-      // log('data: $token');
+      // log('data: $body');
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.setString('token', json.encode(body['token']));
-      localStorage.setString('user', json.encode(body['user']));
+      localStorage.setString('user', json.encode(body['data']));
       Navigator.push(
         context,
         new MaterialPageRoute(
