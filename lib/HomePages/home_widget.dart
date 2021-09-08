@@ -50,19 +50,19 @@ class _HomeState extends State<Home> {
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart_outlined),
-            title: new Text('Stock'),
+            title: new Text('Me'),
           ),
 
 
-          new BottomNavigationBarItem(
-            icon: Icon(Icons.fact_check),
-            title: new Text('Evaluation'),
-          ),
-
-          new BottomNavigationBarItem(
-            icon: Icon(Icons.directions_car),
-            title: new Text('Trips'),
-          ),
+          // new BottomNavigationBarItem(
+          //   icon: Icon(Icons.fact_check),
+          //   title: new Text('Evaluation'),
+          // ),
+          //
+          // new BottomNavigationBarItem(
+          //   icon: Icon(Icons.directions_car),
+          //   title: new Text('Trips'),
+          // ),
 
 
           new BottomNavigationBarItem(
