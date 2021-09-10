@@ -267,88 +267,88 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(padding: EdgeInsets.only(
-                            right: 6,
-                            bottom: 0,
-                          ),
-                            child:Container(
-                              height: 45,
-                              width: 45,
-                              decoration: BoxDecoration(
-                                color: Color(0xffDB4437),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                  )
-                                ],
-                                shape: BoxShape.circle,
-                              ),
-                              child: Center(
-                                  child: FaIcon(
-                                    FontAwesomeIcons.googlePlusG,
-                                    color:Colors.white,
-                                  )
-                              ),
-                            ),
-                          ),
-
-                          Padding(padding: EdgeInsets.only(
-                              right: 6,
-                              bottom: 0
-                          ),
-                            child:Container(
-                              height: 45,
-                              width: 45,
-                              decoration: BoxDecoration(
-                                color: Colors.lightBlueAccent,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                  )
-                                ],
-                                shape: BoxShape.circle,
-                              ),
-                              child: Center(
-                                  child: FaIcon(
-                                    FontAwesomeIcons.twitter,
-                                    color:Colors.white,
-                                  )
-                              ),
-                            ),
-                          ),
-
-                          Padding(padding: EdgeInsets.only(
-                              right: 6,
-                              bottom: 0
-                          ),
-                            child:Container(
-                              height: 45,
-                              width: 45,
-                              decoration: BoxDecoration(
-                                color: Color(0xff123456),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                  )
-                                ],
-                                shape: BoxShape.circle,
-                              ),
-                              child: Center(
-                                  child: FaIcon(
-                                    FontAwesomeIcons.facebookF,
-                                    color:Colors.white,
-                                  )
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                    // Padding(
+                    //   padding: const EdgeInsets.only(top: 50.0),
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.center,
+                    //     children: [
+                    //       Padding(padding: EdgeInsets.only(
+                    //         right: 6,
+                    //         bottom: 0,
+                    //       ),
+                    //         child:Container(
+                    //           height: 45,
+                    //           width: 45,
+                    //           decoration: BoxDecoration(
+                    //             color: Color(0xffDB4437),
+                    //             boxShadow: [
+                    //               BoxShadow(
+                    //                 color: Colors.grey,
+                    //               )
+                    //             ],
+                    //             shape: BoxShape.circle,
+                    //           ),
+                    //           child: Center(
+                    //               child: FaIcon(
+                    //                 FontAwesomeIcons.googlePlusG,
+                    //                 color:Colors.white,
+                    //               )
+                    //           ),
+                    //         ),
+                    //       ),
+                    //
+                    //       Padding(padding: EdgeInsets.only(
+                    //           right: 6,
+                    //           bottom: 0
+                    //       ),
+                    //         child:Container(
+                    //           height: 45,
+                    //           width: 45,
+                    //           decoration: BoxDecoration(
+                    //             color: Colors.lightBlueAccent,
+                    //             boxShadow: [
+                    //               BoxShadow(
+                    //                 color: Colors.grey,
+                    //               )
+                    //             ],
+                    //             shape: BoxShape.circle,
+                    //           ),
+                    //           child: Center(
+                    //               child: FaIcon(
+                    //                 FontAwesomeIcons.twitter,
+                    //                 color:Colors.white,
+                    //               )
+                    //           ),
+                    //         ),
+                    //       ),
+                    //
+                    //       Padding(padding: EdgeInsets.only(
+                    //           right: 6,
+                    //           bottom: 0
+                    //       ),
+                    //         child:Container(
+                    //           height: 45,
+                    //           width: 45,
+                    //           decoration: BoxDecoration(
+                    //             color: Color(0xff123456),
+                    //             boxShadow: [
+                    //               BoxShadow(
+                    //                 color: Colors.grey,
+                    //               )
+                    //             ],
+                    //             shape: BoxShape.circle,
+                    //           ),
+                    //           child: Center(
+                    //               child: FaIcon(
+                    //                 FontAwesomeIcons.facebookF,
+                    //                 color:Colors.white,
+                    //               )
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // )
                   ],
                 ),
               ),
