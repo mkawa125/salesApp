@@ -11,6 +11,8 @@ import 'dart:developer';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 
 class LoginPage extends StatefulWidget {
@@ -87,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                             children: <Widget>[
 
                               Padding(
-                                padding: const EdgeInsets.all(15),
+                                padding: const EdgeInsets.all(8),
                                 child: TextFormField(
                                   style: TextStyle(color: Color(0xFF000000)),
                                   cursorColor: Color(0xFF9b9b9b),
@@ -134,17 +136,17 @@ class _LoginPageState extends State<LoginPage> {
                                   },
 
                                   validator: (value){
-                                    bool emailValid = RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$') as bool;
-                                    if(value.isEmpty || value.length < 4 || !emailValid){
+                                    if(value.isEmpty || value.length < 4){
                                       return "Please enter correct values";
                                     }
+                                    email = value;
                                     return null;
                                   },
                                 ),
                               ),
 
                               Padding(
-                                padding: const EdgeInsets.all(15),
+                                padding: const EdgeInsets.all(8),
                                 child: TextFormField(
                                   style: TextStyle(color: Color(0xFF000000)),
                                   cursorColor: Color(0xFF9b9b9b),
@@ -208,11 +210,11 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: FlatButton(
                                   child: Padding(
                                     padding: EdgeInsets.only(
-                                        top: 8, bottom: 8, left: 10, right: 10),
+                                        top: 8, bottom: 8, left: 8, right: 8),
                                     child: Text(
                                       _isLoading? 'Processing...' : 'Login',
                                       textDirection: TextDirection.ltr,
@@ -220,15 +222,17 @@ class _LoginPageState extends State<LoginPage> {
                                         color: Colors.white,
                                         fontSize: 15.0,
                                         decoration: TextDecoration.none,
-                                        fontWeight: FontWeight.normal,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                   ),
-                                  color: Colors.teal,
+                                  color: Colors.black87,
+                                  minWidth: MediaQuery.of(context).size.width,
                                   disabledColor: Colors.grey,
+                                  padding: EdgeInsets.only(top: 8, bottom: 8),
                                   shape: new RoundedRectangleBorder(
-                                      borderRadius:
-                                      new BorderRadius.circular(8.0)),
+                                      borderRadius: new BorderRadius.circular(8.0)
+                                  ),
                                   onPressed: () {
                                     if (_formKey.currentState.validate()) {
                                       _login();
@@ -262,6 +266,89 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(top: 50.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(padding: EdgeInsets.only(
+                            right: 6,
+                            bottom: 0,
+                          ),
+                            child:Container(
+                              height: 45,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                color: Color(0xffDB4437),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                  )
+                                ],
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.googlePlusG,
+                                    color:Colors.white,
+                                  )
+                              ),
+                            ),
+                          ),
+
+                          Padding(padding: EdgeInsets.only(
+                              right: 6,
+                              bottom: 0
+                          ),
+                            child:Container(
+                              height: 45,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                color: Colors.lightBlueAccent,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                  )
+                                ],
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.twitter,
+                                    color:Colors.white,
+                                  )
+                              ),
+                            ),
+                          ),
+
+                          Padding(padding: EdgeInsets.only(
+                              right: 6,
+                              bottom: 0
+                          ),
+                            child:Container(
+                              height: 45,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                color: Color(0xff123456),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                  )
+                                ],
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.facebookF,
+                                    color:Colors.white,
+                                  )
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
