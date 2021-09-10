@@ -344,7 +344,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   builder: (context) => LoginPage()));
                         },
                         child: Text(
-                          'Already Have an Account?',
+                          'Already Have an Account? Sign In',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
