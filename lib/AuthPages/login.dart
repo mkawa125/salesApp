@@ -213,10 +213,9 @@ class _LoginPageState extends State<LoginPage> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: FlatButton(
                                   child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 8, bottom: 8, left: 8, right: 8),
+                                    padding: EdgeInsets.all(8),
                                     child: Text(
-                                      _isLoading? 'Processing...' : 'Login',
+                                      _isLoading? 'Processing...' : 'Sign In',
                                       textDirection: TextDirection.ltr,
                                       style: TextStyle(
                                         color: Colors.white,
