@@ -9,6 +9,7 @@ import 'package:simusolarApp/HomePages/slideLeftRoute.dart';
 import 'package:simusolarApp/HomePages/slideRightRoute.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'stock_on_hand.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
@@ -76,6 +77,16 @@ class _HomeClassState extends State<HomeClass>{
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+
+                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
+                                child: Center(
+                                    child: FaIcon(
+                                      FontAwesomeIcons.userCircle,
+                                      color:Colors.black87,
+                                    )
+                                ),
+                              ),
+
                               Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
                                 child: Text("Leads",
                                   style: GoogleFonts.sourceCodePro(
@@ -115,6 +126,16 @@ class _HomeClassState extends State<HomeClass>{
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+
+                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
+                                child: Center(
+                                    child: FaIcon(
+                                      FontAwesomeIcons.userCheck,
+                                      color:Colors.white,
+                                    )
+                                ),
+                              ),
+
                               Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
                                 child: Text("Customers",
                                   style: GoogleFonts.sourceCodePro(
@@ -132,251 +153,6 @@ class _HomeClassState extends State<HomeClass>{
               ],
             ),
 
-            Row(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(behavior: HitTestBehavior.opaque,
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        SlideRightRoute(
-                          page: StockOnHand(),
-                        )
-                    );
-                  },
-                  child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
-                      // height: MediaQuery.of(context).size.height * .10,
-                      width: MediaQuery.of(context).size.width * .42,
-
-                      decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(8)
-
-                      ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
-                                child: Text("Leads",
-                                  style: GoogleFonts.sourceCodePro(
-                                    color: Colors.black87,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                      )
-                  ),
-                ),
-                Spacer(),
-                GestureDetector(behavior: HitTestBehavior.opaque,
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      SlideLeftRoute(
-                        page: LoginPage(),
-
-                      ),
-                    );
-                  },
-
-                  child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
-                      // height: MediaQuery.of(context).size.height * .10,
-                      width: MediaQuery.of(context).size.width * .42,
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
-                                child: Text("Customers",
-                                  style: GoogleFonts.sourceCodePro(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                      )
-                  ),
-                )
-              ],
-            ),
-
-            Row(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(behavior: HitTestBehavior.opaque,
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        SlideRightRoute(
-                          page: StockOnHand(),
-                        )
-                    );
-                  },
-                  child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
-                      // height: MediaQuery.of(context).size.height * .10,
-                      width: MediaQuery.of(context).size.width * .42,
-
-                      decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(8)
-
-                      ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
-                                child: Text("Leads",
-                                  style: GoogleFonts.sourceCodePro(
-                                    color: Colors.black87,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                      )
-                  ),
-                ),
-                Spacer(),
-                GestureDetector(behavior: HitTestBehavior.opaque,
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      SlideLeftRoute(
-                        page: LoginPage(),
-
-                      ),
-                    );
-                  },
-
-                  child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
-                      // height: MediaQuery.of(context).size.height * .10,
-                      width: MediaQuery.of(context).size.width * .42,
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
-                                child: Text("Customers",
-                                  style: GoogleFonts.sourceCodePro(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                      )
-                  ),
-                )
-              ],
-            ),
-
-            Row(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(behavior: HitTestBehavior.opaque,
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        SlideRightRoute(
-                          page: StockOnHand(),
-                        )
-                    );
-                  },
-                  child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
-                      // height: MediaQuery.of(context).size.height * .10,
-                      width: MediaQuery.of(context).size.width * .42,
-
-                      decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(8)
-
-                      ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
-                                child: Text("Leads",
-                                  style: GoogleFonts.sourceCodePro(
-                                    color: Colors.black87,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                      )
-                  ),
-                ),
-                Spacer(),
-                GestureDetector(behavior: HitTestBehavior.opaque,
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      SlideLeftRoute(
-                        page: LoginPage(),
-
-                      ),
-                    );
-                  },
-
-                  child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
-                      // height: MediaQuery.of(context).size.height * .10,
-                      width: MediaQuery.of(context).size.width * .42,
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
-                                child: Text("Customers",
-                                  style: GoogleFonts.sourceCodePro(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                      )
-                  ),
-                )
-              ],
-            ),
 
             Center(
               child: RaisedButton(
