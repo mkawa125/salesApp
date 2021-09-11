@@ -337,15 +337,33 @@ class _HomeClassState extends State<HomeClass>{
             ),
 
             Padding(
-              padding: const EdgeInsets.only(left: 10, top: 25, bottom: 4),
+              padding: const EdgeInsets.only(left: 10, top: 35, bottom: 10),
               child: Text('Next Due Customers',
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 15,
                 ),
               ),
-
             ),
+
+            Container(
+              height: 250.0,
+              padding: EdgeInsets.all(0),
+              child: ListView.builder(
+                  itemCount: 4,
+                  itemExtent: 40.0,
+                  itemBuilder: (BuildContext context,int index){
+                    return ListTile(
+                        leading: Icon(Icons.account_circle),
+                        trailing: Text("GFG",
+                          style: TextStyle(
+                              color: Colors.green,fontSize: 15),),
+                        title:Text("List item $index")
+                    );
+                  }
+              ),
+            ),
+
 
 
 
