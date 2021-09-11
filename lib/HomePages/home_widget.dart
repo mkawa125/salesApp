@@ -15,10 +15,10 @@ class Home extends StatefulWidget{
   }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   final List<Widget> _children = [
-    HomeClass(),
     StockOnHand(),
+    HomeClass(),
     PlaceholderWidget(Colors.white),
     TripsPage(),
     TicketsPage()
@@ -52,12 +52,14 @@ class _HomeState extends State<Home> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
+
           new BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
+            icon: Icon(Icons.calendar_view_day_rounded),
+              title: new Text('Calendar'),
           ),
+
           new BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_rounded),
+            icon: new Icon(Icons.account_circle_rounded),
             title: new Text('Me'),
           ),
 

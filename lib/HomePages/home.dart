@@ -47,16 +47,21 @@ class _HomeClassState extends State<HomeClass>{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Welcome, $name',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold
+
+            Padding(
+              padding: const EdgeInsets.only(left: 10, top: 4, bottom: 4),
+              child: Text('Welcome, $name',
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                  fontSize: 17,
+                ),
               ),
             ),
 
             Card(
               elevation: 4.0,
               color: Colors.white,
-              margin: EdgeInsets.only(top: 20, bottom: 25, left: 10, right: 10),
+              margin: EdgeInsets.only(top: 8, bottom: 15, left: 10, right: 10),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4)),
               child: Padding(
@@ -68,10 +73,11 @@ class _HomeClassState extends State<HomeClass>{
                     children: <Widget>[
 
                       Center(
-                        child: Text('\$10000',
+                        child: Text('\$ 2,000,000',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 18
+                              fontSize: 19,
+                            color: Colors.red[300]
                           ),
                         ),
                       ),
@@ -81,8 +87,8 @@ class _HomeClassState extends State<HomeClass>{
                         child: Center(
                           child: Text('Total Collection This month',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16
                             ),
                           ),
                         ),
@@ -108,7 +114,7 @@ class _HomeClassState extends State<HomeClass>{
 
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.all(4),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
 
@@ -126,11 +132,12 @@ class _HomeClassState extends State<HomeClass>{
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
 
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
+                              Padding(padding: EdgeInsets.only(bottom: 4, top: 0),
                                 child: Center(
                                     child: FaIcon(
                                       FontAwesomeIcons.userCircle,
                                       color:Colors.black87,
+                                      size: 15,
                                     )
                                 ),
                               ),
@@ -139,7 +146,7 @@ class _HomeClassState extends State<HomeClass>{
                                 child: Text("Leads",
                                   style: GoogleFonts.sourceCodePro(
                                     color: Colors.black87,
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -163,7 +170,7 @@ class _HomeClassState extends State<HomeClass>{
 
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.all(4),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
                       decoration: BoxDecoration(
@@ -186,11 +193,12 @@ class _HomeClassState extends State<HomeClass>{
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
 
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
+                              Padding(padding: EdgeInsets.only(bottom: 0, top: 0),
                                 child: Center(
                                     child: FaIcon(
                                       FontAwesomeIcons.userCheck,
                                       color:Colors.white,
+                                      size: 15,
                                     )
                                 ),
                               ),
@@ -199,7 +207,7 @@ class _HomeClassState extends State<HomeClass>{
                                 child: Text("Customers",
                                   style: GoogleFonts.sourceCodePro(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -225,7 +233,7 @@ class _HomeClassState extends State<HomeClass>{
                   },
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:10.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.all(4),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
 
@@ -241,16 +249,17 @@ class _HomeClassState extends State<HomeClass>{
                           borderRadius: BorderRadius.circular(4)
 
                       ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
+                      child: Padding(padding: EdgeInsets.only(right:0, top:0,),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
 
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
+                              Padding(padding: EdgeInsets.only(bottom: 0, top: 0),
                                 child: Center(
                                     child: FaIcon(
                                       FontAwesomeIcons.userCircle,
                                       color:Colors.black87,
+                                      size: 15,
                                     )
                                 ),
                               ),
@@ -259,7 +268,7 @@ class _HomeClassState extends State<HomeClass>{
                                 child: Text("Leads",
                                   style: GoogleFonts.sourceCodePro(
                                     color: Colors.black87,
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -283,7 +292,7 @@ class _HomeClassState extends State<HomeClass>{
 
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:10.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.all(4),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
                       decoration: BoxDecoration(
@@ -300,11 +309,12 @@ class _HomeClassState extends State<HomeClass>{
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
 
-                              Padding(padding: EdgeInsets.only(bottom: 8, top: 0),
+                              Padding(padding: EdgeInsets.only(bottom: 0, top: 0),
                                 child: Center(
                                     child: FaIcon(
                                       FontAwesomeIcons.userCheck,
                                       color:Colors.white,
+                                      size: 15,
                                     )
                                 ),
                               ),
@@ -313,7 +323,7 @@ class _HomeClassState extends State<HomeClass>{
                                 child: Text("Customers",
                                   style: GoogleFonts.sourceCodePro(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -325,6 +335,18 @@ class _HomeClassState extends State<HomeClass>{
                 )
               ],
             ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 10, top: 25, bottom: 4),
+              child: Text('Next Due Customers',
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 15,
+                ),
+              ),
+
+            ),
+
 
 
             // Center(
@@ -339,7 +361,7 @@ class _HomeClassState extends State<HomeClass>{
             // ),
 
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(10.0),
               child: FlatButton(
                 child: Padding(
                   padding: EdgeInsets.all(8),
@@ -365,6 +387,9 @@ class _HomeClassState extends State<HomeClass>{
                 },
               ),
             ),
+
+
+
           ],
         ),
       ),
