@@ -58,9 +58,9 @@ class _HomeClassState extends State<HomeClass>{
               color: Colors.white,
               margin: EdgeInsets.only(top: 20, bottom: 25, left: 10, right: 10),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)),
+                  borderRadius: BorderRadius.circular(4)),
               child: Padding(
-                padding: const EdgeInsets.only(top: 25, bottom: 25),
+                padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -108,7 +108,7 @@ class _HomeClassState extends State<HomeClass>{
 
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(8),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
 
@@ -118,10 +118,10 @@ class _HomeClassState extends State<HomeClass>{
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [Colors.green[400], Colors.blue[200]]),
-                          borderRadius: BorderRadius.circular(8)
+                          borderRadius: BorderRadius.circular(4)
 
                       ),
-                      child: Padding(padding: EdgeInsets.only(right:8, top:0,),
+                      child: Padding(padding: EdgeInsets.only(right:0, top:0,),
                           child: new Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -163,7 +163,7 @@ class _HomeClassState extends State<HomeClass>{
 
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(8),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
                       decoration: BoxDecoration(
@@ -171,7 +171,7 @@ class _HomeClassState extends State<HomeClass>{
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [Colors.blue[400], Colors.deepPurpleAccent[200]]),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(4),
                           boxShadow: [
                             BoxShadow(
                             color: Colors.grey[400].withOpacity(0.5),
@@ -225,7 +225,7 @@ class _HomeClassState extends State<HomeClass>{
                   },
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:10.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(8),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
 
@@ -238,7 +238,7 @@ class _HomeClassState extends State<HomeClass>{
                               Colors.red[100],
                             ],
                           ),
-                          borderRadius: BorderRadius.circular(8)
+                          borderRadius: BorderRadius.circular(4)
 
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:0,),
@@ -283,7 +283,7 @@ class _HomeClassState extends State<HomeClass>{
 
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:10.0,right:10.0,bottom:2.0),
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(8),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
                       decoration: BoxDecoration(
@@ -293,7 +293,7 @@ class _HomeClassState extends State<HomeClass>{
                               Colors.greenAccent[100],
                             ],
                           ),
-                          borderRadius: BorderRadius.circular(8)
+                          borderRadius: BorderRadius.circular(4)
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:0,),
                           child: Column(
