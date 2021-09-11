@@ -17,10 +17,13 @@ void main() {
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   final String title='';
+  final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
+        navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
