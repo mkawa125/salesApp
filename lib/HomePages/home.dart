@@ -39,6 +39,8 @@ class _HomeClassState extends State<HomeClass>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Color(0xff00BCD1),
+      backgroundColor: Colors.grey[200],
       body: Padding(
         padding: const EdgeInsets.all(8.0),
 
