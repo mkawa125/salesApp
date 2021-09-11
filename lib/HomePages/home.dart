@@ -51,6 +51,46 @@ class _HomeClassState extends State<HomeClass>{
               ),
             ),
 
+            Card(
+              elevation: 4.0,
+              color: Colors.white,
+              margin: EdgeInsets.only(top: 20, bottom: 25, left: 10, right: 10),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 25, bottom: 25),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                    children: <Widget>[
+
+                      Center(
+                        child: Text('\$10000',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18
+                          ),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Text('Total Collection This month',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18
+                            ),
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
+              ),
+            ),
+
             Row(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(behavior: HitTestBehavior.opaque,
@@ -62,6 +102,8 @@ class _HomeClassState extends State<HomeClass>{
                         )
                     );
                   },
+
+
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
                       padding: EdgeInsets.all(15),
