@@ -28,18 +28,26 @@ class _HomeState extends State<Home> {
     return new Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
-        title: Text('Service App'),
+        iconTheme: IconThemeData(color: Colors.black87),
+        title: Text('Service App',
+          style: TextStyle(
+            color: Colors.black87
+          ),
+        ),
+        shadowColor: Colors.grey[100],
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
           ),
-          Icon(Icons.more_vert),
+          Icon(Icons.more_vert,
+            color: Colors.black87,
+          ),
         ],
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.grey[100],
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white70,
+        // backgroundColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
@@ -49,7 +57,7 @@ class _HomeState extends State<Home> {
             title: new Text('Home'),
           ),
           new BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
+            icon: Icon(Icons.account_circle_rounded),
             title: new Text('Me'),
           ),
 
