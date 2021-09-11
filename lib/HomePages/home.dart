@@ -327,15 +327,42 @@ class _HomeClassState extends State<HomeClass>{
             ),
 
 
-            Center(
-              child: RaisedButton(
-                elevation: 10,
-                onPressed: (){
+            // Center(
+            //   child: ElevatedButton(
+            //     onPressed: (){
+            //       logout();
+            //     },
+            //     child: Text('Logout'),
+            //
+            //   ),
+            //
+            // ),
+
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: FlatButton(
+                child: Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text('Logout',
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15.0,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                color: Colors.teal,
+                minWidth: MediaQuery.of(context).size.width,
+                disabledColor: Colors.grey,
+                padding: EdgeInsets.only(top: 8, bottom: 8),
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(4.0)
+                ),
+                onPressed: () {
                   logout();
                 },
-                color: Colors.teal,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: Text('Logout'),
               ),
             ),
           ],
