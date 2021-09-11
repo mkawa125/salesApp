@@ -69,12 +69,16 @@ class _HomeClassState extends State<HomeClass>{
                       width: MediaQuery.of(context).size.width * .42,
 
                       decoration: BoxDecoration(
-                          color: Colors.grey[300],
+                          // color: Colors.grey[300],
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.green[400], Colors.blue[200]]),
                           borderRadius: BorderRadius.circular(8)
 
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:0,),
-                          child: Column(
+                          child: new Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
 
@@ -119,8 +123,19 @@ class _HomeClassState extends State<HomeClass>{
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
                       decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(8)
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.blue[400], Colors.deepPurpleAccent[200]]),
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                            color: Colors.grey[400].withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                            offset: Offset(0, 2),
+                          )
+                        ]
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:0,),
                           child: Column(
@@ -165,13 +180,20 @@ class _HomeClassState extends State<HomeClass>{
                     );
                   },
                   child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
+                      margin: EdgeInsets.only(left:10.0, top:10.0,right:10.0,bottom:2.0),
                       padding: EdgeInsets.all(15),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
 
                       decoration: BoxDecoration(
-                          color: Colors.grey[300],
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Colors.blue[100],
+                              Colors.red[100],
+                            ],
+                          ),
                           borderRadius: BorderRadius.circular(8)
 
                       ),
@@ -216,12 +238,17 @@ class _HomeClassState extends State<HomeClass>{
                   },
 
                   child: Container(
-                      margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
+                      margin: EdgeInsets.only(left:10.0, top:10.0,right:10.0,bottom:2.0),
                       padding: EdgeInsets.all(15),
                       // height: MediaQuery.of(context).size.height * .10,
                       width: MediaQuery.of(context).size.width * .42,
                       decoration: BoxDecoration(
-                          color: Colors.green,
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.red[100],
+                              Colors.greenAccent[100],
+                            ],
+                          ),
                           borderRadius: BorderRadius.circular(8)
                       ),
                       child: Padding(padding: EdgeInsets.only(right:8, top:0,),
