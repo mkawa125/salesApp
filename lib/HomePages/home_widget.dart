@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
       drawer: NavDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black87),
-        title: Text('Service App',
+        title: Text('Sales App',
           style: TextStyle(
             color: Colors.black87
           ),
