@@ -111,7 +111,6 @@ class _HomeClassState extends State<HomeClass>{
                     );
                   },
 
-
                   child: Container(
                       margin: EdgeInsets.only(left:10.0, top:2.0,right:10.0,bottom:2.0),
                       padding: EdgeInsets.all(4),
