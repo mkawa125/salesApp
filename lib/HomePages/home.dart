@@ -420,6 +420,7 @@ class _HomeClassState extends State<HomeClass>{
     var body = json.decode(res.body);
     // log('data: $body');
     if(body['status'] == 'success'){
+
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.remove('user');
       localStorage.remove('token');
