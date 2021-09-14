@@ -5,6 +5,7 @@ import "placeholder_widget.dart";
 import 'nav_drawer.dart';
 import 'stock_on_hand.dart';
 import 'tickets.dart';
+import 'package:simusolarApp/HomePages/home.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -14,11 +15,11 @@ class Home extends StatefulWidget{
   }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   final List<Widget> _children = [
-    PlaceholderWidget(Colors.green),
     StockOnHand(),
-    PlaceholderWidget(Colors.green),
+    HomeClass(),
+    PlaceholderWidget(Colors.white),
     TripsPage(),
     TicketsPage()
   ];
@@ -27,41 +28,51 @@ class _HomeState extends State<Home> {
     return new Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
-        title: Text('Service App'),
+        iconTheme: IconThemeData(color: Colors.black87),
+        title: Text('Sales App',
+          style: TextStyle(
+            color: Colors.black87
+          ),
+        ),
+        shadowColor: Colors.grey[100],
         actions: [
-          Icon(Icons.share_outlined),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(Icons.search)),
-          Icon(Icons.more_vert),
+          ),
+          Icon(Icons.more_vert,
+            color: Colors.black87,
+          ),
         ],
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.grey[100],
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        // backgroundColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
-          new BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          new BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            title: new Text('Stock'),
-          ),
-
 
           new BottomNavigationBarItem(
-            icon: Icon(Icons.fact_check),
-            title: new Text('Evaluation'),
+            icon: Icon(Icons.calendar_view_day_rounded),
+              title: new Text('Calendar'),
           ),
 
           new BottomNavigationBarItem(
-            icon: Icon(Icons.directions_car),
-            title: new Text('Trips'),
+            icon: new Icon(Icons.account_circle_rounded),
+            title: new Text('Me'),
           ),
+
+
+          // new BottomNavigationBarItem(
+          //   icon: Icon(Icons.fact_check),
+          //   title: new Text('Evaluation'),
+          // ),
+          //
+          // new BottomNavigationBarItem(
+          //   icon: Icon(Icons.directions_car),
+          //   title: new Text('Trips'),
+          // ),
 
 
           new BottomNavigationBarItem(

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:simusolarApp/AuthPages/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'package:simusolarApp/Controllers/api.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -17,85 +21,33 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.fact_check_outlined),
-            title: Text('All Applications'),
+            leading: Icon(Icons.account_circle),
+            title: Text('My Profile'),
             onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.money_outlined),
-            title: Text('All Orders'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.drive_eta_outlined),
-            title: Text('Cars'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.list_alt_outlined),
-            title: Text('Live Applications'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.local_grocery_store_outlined),
-            title: Text('Products'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.list_outlined),
-            title: Text('Pump Characteristics'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.list_outlined),
-            title: Text('Sold Stock'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.shopping_cart_outlined),
-            title: Text('Stock On Hand'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.history_outlined),
-            title: Text('Stock Transfer History'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.info_outlined),
-            title: Text('About'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.feedback_outlined),
-            title: Text('Feedback'),
-            hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),
             hoverColor: Colors.black12,
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: (){
+              logout();
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=>LoginPage()));
+            },
           ),
         ],
       ),
     );
+  }
+  void logout() async{
+    var res = await Network().getData('/logout');
+    var body = json.decode(res.body);
+    // log('data: $body');
+    if(body['status'] == 'success'){
+      SharedPreferences localStorage = await SharedPreferences.getInstance();
+      localStorage.remove('user');
+      localStorage.remove('token');
+    }
   }
 }
