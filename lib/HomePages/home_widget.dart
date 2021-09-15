@@ -6,6 +6,8 @@ import 'nav_drawer.dart';
 import 'package:simusolarApp/StockOnHand/index.dart';
 import 'tickets.dart';
 import 'package:simusolarApp/HomePages/home.dart';
+import 'package:simusolarApp/Customers/index.dart';
+import 'package:simusolarApp/HomePages/slideLeftRoute.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -19,7 +21,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     StockOnHand(),
     HomeClass(),
-    PlaceholderWidget(Colors.white),
+    ListCustomers(),
     TripsPage(),
     TicketsPage()
   ];
@@ -50,35 +52,37 @@ class _HomeState extends State<Home> {
         // backgroundColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
+        // onTap: (value){
+        //   if(value == 2){Navigator.push(context, SlideLeftRoute(page: ListCustomers(),),);}
+        //   },
         currentIndex: _currentIndex,
         items: [
 
           new BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_view_day_rounded),
-              title: new Text('Calendar'),
+            icon: Icon(Icons.shopping_cart_sharp),
+              title: new Text('Stock'),
           ),
 
           new BottomNavigationBarItem(
-            icon: new Icon(Icons.account_circle_rounded),
-            title: new Text('Me'),
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
           ),
 
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.verified_user_sharp),
+            title: new Text('Customers'),
+          ),
 
-          // new BottomNavigationBarItem(
-          //   icon: Icon(Icons.fact_check),
-          //   title: new Text('Evaluation'),
-          // ),
-          //
           // new BottomNavigationBarItem(
           //   icon: Icon(Icons.directions_car),
           //   title: new Text('Trips'),
           // ),
 
 
-          new BottomNavigationBarItem(
-              icon: Icon(Icons.confirmation_number),
-              title: Text('Tickets')
-          ),
+          // new BottomNavigationBarItem(
+          //     icon: Icon(Icons.confirmation_number),
+          //     title: Text('Tickets')
+          // ),
         ],
       ),
     );
