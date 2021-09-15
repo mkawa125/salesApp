@@ -3,7 +3,7 @@ import "package:flutter/material.dart";
 import 'trips.dart';
 import "placeholder_widget.dart";
 import 'nav_drawer.dart';
-import 'stock_on_hand.dart';
+import 'package:simusolarApp/StockOnHand/index.dart';
 import 'tickets.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 

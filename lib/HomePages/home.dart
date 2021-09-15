@@ -8,7 +8,7 @@ import 'dart:developer';
 import 'package:simusolarApp/HomePages/slideLeftRoute.dart';
 import 'package:simusolarApp/HomePages/slideRightRoute.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'stock_on_hand.dart';
+import 'package:simusolarApp/StockOnHand/index.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
