@@ -8,11 +8,18 @@ class ListCustomers extends StatefulWidget {
 }
 
 class _ListCustomersState extends State<ListCustomers> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       body: ListView.builder(
-          itemCount: 15,
+          itemCount: 25,
           itemExtent: 40.0,
           itemBuilder: (BuildContext context,int index){
             return ListTile(
@@ -25,6 +32,12 @@ class _ListCustomersState extends State<ListCustomers> {
                     color: Colors.grey[700],fontSize: 15),),
             );
           }
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Add New Lead',
+        child: Icon(Icons.add),
       ),
     );
   }
