@@ -298,6 +298,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   },
                                 ),
                               ),
+
                               Padding(
                                 padding: const EdgeInsets.all(8),
                                 child: FlatButton(
