@@ -52,7 +52,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
       ),
       body: Container(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.only(top: 0, left: 8.0, bottom: 8.0, right: 8.0),
+          padding: const EdgeInsets.all(0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -78,7 +78,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
               Card(
                 elevation: 2.0,
                 color: Colors.white,
-                margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                margin: EdgeInsets.only(left: 8, right: 8, bottom: 10),
                 // shape: RoundedRectangleBorder(
                 //     borderRadius: BorderRadius.circular(8)),
                 child: Padding(
@@ -90,37 +90,40 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                       children: <Widget>[
 
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8),
                           child: TextFormField(
                             style: TextStyle(color: Color(0xFF000000)),
                             cursorColor: Color(0xFF9b9b9b),
                             keyboardType: TextInputType.text,
+                            maxLines: 1,
                             decoration: InputDecoration(
                               prefixIcon: Icon(
                                 Icons.email,
                                 color: Colors.grey,
+                                size: 15,
                               ),
                               hintText: "Email",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.normal),
 
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -147,26 +150,27 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 color: Colors.grey,
                               ),
                               hintText: "First Name",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.normal),
 
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -193,25 +197,26 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 color: Colors.grey,
                               ),
                               hintText: "Last Name",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.normal),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -238,25 +243,26 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 color: Colors.grey,
                               ),
                               hintText: "Phone",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.normal),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -284,25 +290,26 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 color: Colors.grey,
                               ),
                               hintText: "Phone",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
                                   fontSize: 15,
                                   fontWeight: FontWeight.normal),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -331,25 +338,26 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 color: Colors.grey,
                               ),
                               hintText: "Phone",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
                                   fontSize: 15,
                                   fontWeight: FontWeight.normal),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -377,163 +385,26 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 color: Colors.grey,
                               ),
                               hintText: "Phone",
+                              contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
                                   fontSize: 15,
                                   fontWeight: FontWeight.normal),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                            ),
-                            validator: (phonenumber) {
-                              if (phonenumber.isEmpty) {
-                                return 'Please enter phone number';
-                              }
-                              phone = phonenumber;
-                              return null;
-                            },
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            style: TextStyle(color: Color(0xFF000000)),
-                            cursorColor: Color(0xFF9b9b9b),
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.phone,
-                                color: Colors.grey,
-                              ),
-                              hintText: "Phone",
-                              hintStyle: TextStyle(
-                                  color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                            ),
-                            validator: (phonenumber) {
-                              if (phonenumber.isEmpty) {
-                                return 'Please enter phone number';
-                              }
-                              phone = phonenumber;
-                              return null;
-                            },
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            style: TextStyle(color: Color(0xFF000000)),
-                            cursorColor: Color(0xFF9b9b9b),
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.phone,
-                                color: Colors.grey,
-                              ),
-                              hintText: "Phone",
-                              hintStyle: TextStyle(
-                                  color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                            ),
-                            validator: (phonenumber) {
-                              if (phonenumber.isEmpty) {
-                                return 'Please enter phone number';
-                              }
-                              phone = phonenumber;
-                              return null;
-                            },
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            style: TextStyle(color: Color(0xFF000000)),
-                            cursorColor: Color(0xFF9b9b9b),
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.phone,
-                                color: Colors.grey,
-                              ),
-                              hintText: "Phone",
-                              hintStyle: TextStyle(
-                                  color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
                                   color: Colors.grey[700],
                                 ),
@@ -590,12 +461,8 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
-        // backgroundColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
-        // onTap: (value){
-        //   if(value == 2){Navigator.push(context, SlideLeftRoute(page: ListCustomers(),),);}
-        //   },
         currentIndex: _currentIndex,
         items: [
 
@@ -613,17 +480,6 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
             icon: Icon(Icons.verified_user_sharp),
             title: new Text('Customers'),
           ),
-
-          // new BottomNavigationBarItem(
-          //   icon: Icon(Icons.directions_car),
-          //   title: new Text('Trips'),
-          // ),
-
-
-          // new BottomNavigationBarItem(
-          //     icon: Icon(Icons.confirmation_number),
-          //     title: Text('Tickets')
-          // ),
         ],
       ),
     );
