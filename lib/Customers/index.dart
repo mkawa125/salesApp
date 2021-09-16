@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:simusolarApp/HomePages/nav_drawer.dart';
-import 'package:simusolarApp/HomePages/home_widget.dart';
+import 'package:simusolarApp/Customers/registerCustomer.dart';
+import 'package:simusolarApp/HomePages/slideLeftRoute.dart';
+import 'package:simusolarApp/HomePages/slideRightRoute.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class ListCustomers extends StatefulWidget {
   @override
@@ -35,7 +39,7 @@ class _ListCustomersState extends State<ListCustomers> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => RegisterCustomer()),);},
         tooltip: 'Add New Lead',
         child: Icon(Icons.add),
       ),

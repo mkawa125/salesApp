@@ -1,46 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:simusolarApp/HomePages/nav_drawer.dart';
-import 'package:simusolarApp/HomePages/bottomNavigation.dart';
 import 'package:simusolarApp/StockOnHand/index.dart';
+import 'tickets.dart';
 import 'package:simusolarApp/HomePages/home.dart';
 import 'package:simusolarApp/Customers/index.dart';
 
-class RegisterCustomer extends StatefulWidget {
+class BottomNavigation extends StatefulWidget {
   @override
-  _RegisterCustomerState createState() => _RegisterCustomerState();
+  _BottomNavigationState createState() => _BottomNavigationState();
 }
 
-class _RegisterCustomerState extends State<RegisterCustomer> {
-  int _currentIndex = 2;
+class _BottomNavigationState extends State<BottomNavigation> {
+  int _currentIndex = 1;
   final List<Widget> _children = [
     StockOnHand(),
     HomeClass(),
     ListCustomers(),
     // TripsPage(),
-    // TicketsPage()
+    TicketsPage()
   ];
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      // drawer: NavDrawer(),
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87),
-        title: Text('Register Customer', style: TextStyle(color: Colors.black87),),
-        shadowColor: Colors.grey[100],
-        actions: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-          ),
-          Icon(Icons.more_vert,
-            color: Colors.black87,
-          ),
-        ],
-        backgroundColor: Colors.grey[100],
-      ),
-      body: new Center(
-        child: Text("Register customer page"),
-      ),
-
+    return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         // backgroundColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
