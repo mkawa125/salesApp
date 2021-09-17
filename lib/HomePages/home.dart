@@ -12,8 +12,6 @@ import 'package:simusolarApp/StockOnHand/index.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
-
-
 class HomeClass extends StatefulWidget {
   @override
   _HomeClassState createState() => _HomeClassState();

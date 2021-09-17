@@ -426,7 +426,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                             child: Padding(
                               padding: EdgeInsets.all(8),
                               child: Text(
-                                _isLoading? 'Processing...' : 'Register',
+                                _isLoading? 'Processing...' : 'Save',
                                 textDirection: TextDirection.ltr,
                                 style: TextStyle(
                                   color: Colors.white,
@@ -498,14 +498,15 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
     var data = {
       'email' : email,
       'password': password,
-      'phone': phone,
       'first_name': fname,
+      "identification_number": "199501107429885",
+      "gender": "Male",
       'surname': lname
     };
 
-    var res = await Network().authData(data, '/register');
+    var res = await Network().authData(data, '/register-customer');
     var body = json.decode(res.body);
-    log('data: $body');
+    log('data: $res');
 
     if(body['success']){
       SharedPreferences localStorage = await SharedPreferences.getInstance();

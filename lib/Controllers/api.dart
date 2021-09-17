@@ -4,8 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
 
 class Network{
-  final String _url = 'http://192.168.43.203:8000/api/v1';
-  // final String _url = 'http://10.0.2.2:8000/api/v1';
+  // final String _url = 'http://192.168.43.203:8000/api/v1';
+  final String _url = 'http://10.0.2.2:8000/api/v1';
 
   // if you are using android studio emulator, change localhost to 10.0.2.2
   var token;
@@ -17,11 +17,12 @@ class Network{
 
   authData(data, apiUrl) async {
     var fullUrl = _url + apiUrl;
-    return await http.post(
-        fullUrl,
-        body: jsonEncode(data),
-        headers: _setHeaders()
-    );
+    // return await http.post(
+    //     fullUrl,
+    //     body: jsonEncode(data),
+    //     headers: _setHeaders()
+    // );
+    return _setHeaders();
   }
 
   getData(apiUrl) async {
