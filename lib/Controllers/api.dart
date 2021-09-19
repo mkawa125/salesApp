@@ -22,7 +22,6 @@ class Network{
         body: jsonEncode(data),
         headers: _setHeaders()
     );
-    return _setHeaders();
   }
 
   getData(apiUrl) async {
