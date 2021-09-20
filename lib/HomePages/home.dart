@@ -363,20 +363,6 @@ class _HomeClassState extends State<HomeClass>{
               ),
             ),
 
-
-
-
-            // Center(
-            //   child: ElevatedButton(
-            //     onPressed: (){
-            //       logout();
-            //     },
-            //     child: Text('Logout'),
-            //
-            //   ),
-            //
-            // ),
-
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: FlatButton(
@@ -404,9 +390,6 @@ class _HomeClassState extends State<HomeClass>{
                 },
               ),
             ),
-
-
-
           ],
         ),
       ),
@@ -424,7 +407,8 @@ class _HomeClassState extends State<HomeClass>{
       localStorage.remove('token');
       Navigator.push(
           context,
-          MaterialPageRoute(builder: (context)=>LoginPage()));
+          MaterialPageRoute(builder: (context)=>LoginPage())
+      );
     }
   }
 }

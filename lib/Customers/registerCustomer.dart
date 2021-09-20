@@ -50,6 +50,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
         ],
         backgroundColor: Colors.grey[100],
       ),
+
       body: Container(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(0),
