@@ -25,6 +25,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
   var fname;
   var lname;
   var phone;
+  var identificationNumber;
   final List<Widget> _children = [
     StockOnHand(),
     HomeClass(),
@@ -32,6 +33,22 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
     // TripsPage(),
     // TicketsPage()
   ];
+
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  _showMsg(msg) {
+    final snackBar = SnackBar(
+      content: Text(msg),
+      action: SnackBarAction(
+        label: 'Close',
+        onPressed: () {
+          // Some code to undo the change!
+        },
+      ),
+    );
+    _scaffoldKey.currentState.showSnackBar(snackBar);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -186,6 +203,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                             },
                           ),
                         ),
+
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TextFormField(
@@ -215,7 +233,6 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                   color: Colors.grey[700],
                                 ),
                               ),
-
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4),
                                 borderSide: BorderSide(
@@ -232,6 +249,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                             },
                           ),
                         ),
+
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TextFormField(
@@ -287,14 +305,14 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               prefixIcon: Icon(
-                                Icons.phone,
+                                Icons.credit_card_sharp,
                                 color: Colors.grey,
                               ),
-                              hintText: "Phone",
+                              hintText: "ID Number",
                               contentPadding: EdgeInsets.all(0),
                               hintStyle: TextStyle(
                                   color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.normal),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4),
@@ -316,106 +334,11 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 ),
                               ),
                             ),
-                            validator: (phonenumber) {
-                              if (phonenumber.isEmpty) {
-                                return 'Please enter phone number';
+                            validator: (identificationNumber) {
+                              if (identificationNumber.isEmpty) {
+                                return 'ID Number';
                               }
-                              phone = phonenumber;
-                              return null;
-                            },
-                          ),
-                        ),
-
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            style: TextStyle(color: Color(0xFF000000)),
-                            cursorColor: Color(0xFF9b9b9b),
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.phone,
-                                color: Colors.grey,
-                              ),
-                              hintText: "Phone",
-                              contentPadding: EdgeInsets.all(0),
-                              hintStyle: TextStyle(
-                                  color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                            ),
-                            validator: (phonenumber) {
-                              if (phonenumber.isEmpty) {
-                                return 'Please enter phone number';
-                              }
-                              phone = phonenumber;
-                              return null;
-                            },
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            style: TextStyle(color: Color(0xFF000000)),
-                            cursorColor: Color(0xFF9b9b9b),
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.phone,
-                                color: Colors.grey,
-                              ),
-                              hintText: "Phone",
-                              contentPadding: EdgeInsets.all(0),
-                              hintStyle: TextStyle(
-                                  color: Color(0xFF9b9b9b),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                            ),
-                            validator: (phonenumber) {
-                              if (phonenumber.isEmpty) {
-                                return 'Please enter phone number';
-                              }
-                              phone = phonenumber;
+                              phone = identificationNumber;
                               return null;
                             },
                           ),
@@ -492,7 +415,7 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
     });
   }
 
-  void _register()async{
+  void _register() async{
     setState(() {
       _isLoading = true;
     });
@@ -500,14 +423,15 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
       'email' : email,
       'password': password,
       'first_name': fname,
-      "identification_number": "199501107429885",
+      "identification_number": identificationNumber,
       "gender": "Male",
       'surname': lname
     };
 
     var res = await Network().authData(data, '/register-customer');
     var body = json.decode(res.body);
-    log('data: $res');
+    var data1 = jsonEncode(data);
+    log('data: $body');
 
     if(body['success']){
       SharedPreferences localStorage = await SharedPreferences.getInstance();
@@ -519,6 +443,10 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
             builder: (context) => ListCustomers()
         ),
       );
+    }
+    else{
+      _isLoading = false;
+      _showMsg(body['userMessage']);
     }
 
     setState(() {
