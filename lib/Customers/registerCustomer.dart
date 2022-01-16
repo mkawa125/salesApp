@@ -24,7 +24,8 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
   var password;
   var fname;
   var lname;
-  var phone;
+  var
+  phone;
   var identificationNumber;
   final List<Widget> _children = [
     StockOnHand(),

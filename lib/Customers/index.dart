@@ -46,7 +46,7 @@ class _ListCustomersState extends State<ListCustomers> {
             ),
           )),
       body: ListView.separated(
-          itemCount: 25,
+          itemCount: 5,
           padding: EdgeInsets.all(0),
           separatorBuilder: (context, index) => Divider(
             color: Colors.grey[500],
