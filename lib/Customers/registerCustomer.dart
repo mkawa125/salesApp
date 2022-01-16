@@ -334,11 +334,11 @@ class _RegisterCustomerState extends State<RegisterCustomer> {
                                 ),
                               ),
                             ),
-                            validator: (identificationNumber) {
-                              if (identificationNumber.isEmpty) {
+                            validator: (idNumber) {
+                              if (idNumber.isEmpty) {
                                 return 'ID Number';
                               }
-                              phone = identificationNumber;
+                              identificationNumber = idNumber;
                               return null;
                             },
                           ),
