@@ -22,11 +22,7 @@ class Network{
     return await http.post(
         fullUrl,
         body: jsonEncode(data),
-        headers: {
-          'Content-type' : 'application/json',
-          'Accept' : 'application/json',
-          'Authorization' : 'Bearer $token'
-        }
+        headers: _setHeaders()
     );
   }
 
