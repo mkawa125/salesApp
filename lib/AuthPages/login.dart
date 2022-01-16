@@ -368,7 +368,7 @@ class _LoginPageState extends State<LoginPage> {
       'password' : password
     };
 
-    var res = await Network().authData(data, '/login');
+    var res = await Network().userLogin(data, '/login');
     var body = json.decode(res.body);
     var token = body['token'];
     if(token != null){

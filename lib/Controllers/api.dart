@@ -9,7 +9,7 @@ class Network{
 
   // if you are using android studio emulator, change localhost to 10.0.2.2
   var tokenHard = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2NDIzMTE1ODQsImV4cCI6MTY0MjMxNTE4NCwibmJmIjoxNjQyMzExNTg0LCJqdGkiOiJrbGtkc0Z3TzJQNzZYalRDIiwic3ViIjoiM2MyMTkxNmQtMGY2Yy00ZDg4LWJlZDYtMDM0MWFmODYzM2M2IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.it_GRt7HTJfU2xBWjR46QntPXtcFEUp5QTG7t5apZ_Q";
-  var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2NDIyNzA1OTMsImV4cCI6MTY0MjI3NDE5MywibmJmIjoxNjQyMjcwNTkzLCJqdGkiOiIxUWk5MHhLQ3JPZnZuTzNXIiwic3ViIjoiM2MyMTkxNmQtMGY2Yy00ZDg4LWJlZDYtMDM0MWFmODYzM2M2IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.a5_UZv5y8dPvM0GENCSvIseXHmGVtSkOK5uEQ9P_Reg";
+  var token;
 
   _getToken() async {
     SharedPreferences localStorage = await SharedPreferences.getInstance();
@@ -18,13 +18,26 @@ class Network{
 
   authData(data, apiUrl) async {
     var fullUrl = _url + apiUrl;
+    await _getToken();
     return await http.post(
         fullUrl,
         body: jsonEncode(data),
         headers: {
           'Content-type' : 'application/json',
           'Accept' : 'application/json',
-          'Authorization' : 'Bearer $tokenHard'
+          'Authorization' : 'Bearer $token'
+        }
+    );
+  }
+
+  userLogin(data, apiUrl) async {
+    var fullUrl = _url + apiUrl;
+    return await http.post(
+        fullUrl,
+        body: jsonEncode(data),
+        headers: {
+          'Content-type' : 'application/json',
+          'Accept' : 'application/json'
         }
     );
   }
