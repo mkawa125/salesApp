@@ -33,17 +33,17 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
           new BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart_sharp),
-            title: new Text('Stock'),
+            // title: new Text('Stock'),
           ),
 
           new BottomNavigationBarItem(
             icon: new Icon(Icons.home),
-            title: new Text('Home'),
+            // title: new Text('Home'),
           ),
 
           new BottomNavigationBarItem(
             icon: Icon(Icons.verified_user_sharp),
-            title: new Text('Customers'),
+            // title: new Text('Customers'),
           ),
 
           // new BottomNavigationBarItem(
